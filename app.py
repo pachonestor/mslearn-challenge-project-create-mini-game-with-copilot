@@ -19,10 +19,11 @@ outcome = ""
 while True:
     # ask the user to choose an option
     user_choice = input("Choose rock, paper, or scissors: ").strip().lower()
-    # if the user's choice is not in the list of options
-    if user_choice not in options:
+    # if the user's choice is not in the list of options, ask again for a valid option  (hint: use a while loop)
+    while user_choice not in options:
         # raise an exception
-        raise ValueError("Invalid option. Try again.")
+        print("Invalid option. Try again.")
+        user_choice = input("Choose rock, paper, or scissors: ").strip().lower()
     else:
         # randomly choose rock, paper, or scissors for the computer's choice
         computer_choice = random.choice(options)
